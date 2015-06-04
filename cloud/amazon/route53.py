@@ -291,7 +291,7 @@ def main():
               record['alias'] = False
               record['value'] = ','.join(sorted(rset.resource_records))
               record['values'] = sorted(rset.resource_records)
-            if value_list == sorted(rset.resource_records) and int(record['ttl']) == ttl_in and command_in == 'create':
+            if value_list == sorted(rset.resource_records) and int(record['ttl']) == int(ttl_in) and command_in == 'create':
                 module.exit_json(changed=False)
 
     if command_in == 'get':
